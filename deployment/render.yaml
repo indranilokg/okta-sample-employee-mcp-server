@@ -1,0 +1,31 @@
+services:
+  - type: web
+    name: okta-employee-mcp-server
+    runtime: python
+    pythonVersion: "3.11"
+    
+    # Build and start commands
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn mcp_server.main:app --host 0.0.0.0 --port $PORT
+    
+    # Environment variables (configure these in Render dashboard)
+    envVars:
+      - key: OKTA_DOMAIN
+        value: your-okta-domain.okta.com
+      - key: OKTA_AUTHORIZATION_SERVER_ID
+        value: employee-mcp-server
+      - key: OKTA_AUDIENCE
+        value: https://employee-mcp-resource-server
+      - key: PORT
+        value: "8000"
+      - key: ENVIRONMENT
+        value: production
+      - key: LOG_LEVEL
+        value: INFO
+    
+    # Auto-deploy from git
+    autoDeploy: true
+    
+    # Health check
+    healthCheckPath: /health
+    healthCheckInterval: 300
