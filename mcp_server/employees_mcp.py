@@ -504,11 +504,11 @@ class EmployeesMCP:
         scope = token_claims.get("scope", "")
         
         permission_scope_map = {
-            "view_employee_list": ["mcp:read"],
-            "view_employee_details": ["mcp:read"],
-            "view_salary_info": ["mcp:read"],
-            "edit_employee": ["mcp:write"],
-            "delete_employee": ["mcp:write"]
+            "view_employee_list": ["read_data", "mcp:read"],
+            "view_employee_details": ["read_data", "mcp:read"],
+            "view_salary_info": ["read_data", "mcp:read"],
+            "edit_employee": ["write_data", "mcp:write"],
+            "delete_employee": ["write_data", "mcp:write"]
         }
         
         required_scopes = permission_scope_map.get(permission, [])
