@@ -35,9 +35,13 @@ fi
 echo "Activating virtual environment..."
 source venv/bin/activate
 
-# Install dependencies
+# Use the venv's pip directly (bypasses system pip restrictions)
+echo "Upgrading pip..."
+venv/bin/python -m pip install --upgrade pip
+
+# Install dependencies using venv's pip
 echo "Installing dependencies..."
-pip install -r requirements.txt
+venv/bin/pip install -r requirements.txt
 echo "✓ Dependencies installed"
 
 echo ""
@@ -53,5 +57,5 @@ echo ""
 echo "Press Ctrl+C to stop"
 echo ""
 
-# Start the server
-uvicorn mcp_server.main:app --reload --host 0.0.0.0 --port 8001
+# Start the server using venv's python to run uvicorn as a module
+venv/bin/python -m uvicorn mcp_server.main:app --reload --host 0.0.0.0 --port 8001

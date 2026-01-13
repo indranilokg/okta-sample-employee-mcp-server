@@ -46,7 +46,7 @@ class EmployeesMCP:
             {
                 "name": "list_employees",
                 "description": "List all active employees with their basic information (department, title, manager). Requires mcp:read scope.",
-                "parameters": {
+                "inputSchema": {
                     "type": "object",
                     "properties": {
                         "status_filter": {
@@ -61,7 +61,7 @@ class EmployeesMCP:
             {
                 "name": "get_employee_info",
                 "description": "Get detailed information about a specific employee by name or employee ID. Requires mcp:read scope.",
-                "parameters": {
+                "inputSchema": {
                     "type": "object",
                     "properties": {
                         "employee_identifier": {
@@ -75,7 +75,7 @@ class EmployeesMCP:
             {
                 "name": "get_department_info",
                 "description": "Get overview information about all departments including head, employee count, budget, and location.",
-                "parameters": {
+                "inputSchema": {
                     "type": "object",
                     "properties": {
                         "department_name": {
@@ -89,7 +89,7 @@ class EmployeesMCP:
             {
                 "name": "get_benefits_info",
                 "description": "Get information about available employee benefits and enrollment statistics.",
-                "parameters": {
+                "inputSchema": {
                     "type": "object",
                     "properties": {}
                 }
@@ -97,7 +97,7 @@ class EmployeesMCP:
             {
                 "name": "get_salary_info",
                 "description": "Get salary band distribution information. Requires mcp:read scope.",
-                "parameters": {
+                "inputSchema": {
                     "type": "object",
                     "properties": {}
                 }
@@ -105,7 +105,7 @@ class EmployeesMCP:
             {
                 "name": "get_onboarding_info",
                 "description": "Get information about the employee onboarding process and steps.",
-                "parameters": {
+                "inputSchema": {
                     "type": "object",
                     "properties": {}
                 }

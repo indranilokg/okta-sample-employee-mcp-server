@@ -8,6 +8,7 @@ A standalone, production-ready MCP (Model Context Protocol) server for employee 
 - ✅ 6 employee management tools
 - ✅ Three transport options (REST API, MCP HTTP, stdio)
 - ✅ Production-ready with Docker & Render deployment
+- ✅ MCP specification compliant
 
 ## Quick Start
 
@@ -376,6 +377,17 @@ Choose based on your use case:
 - **REST API** - Custom integrations, testing
 - **MCP HTTP** - Standard MCP clients, production
 - **stdio** - Claude Desktop, IDE integration
+
+## MCP Compatibility
+
+This server is fully compatible with standard MCP clients:
+- ✅ langchain-mcp-adapters
+- ✅ Claude Desktop
+- ✅ Cline / Cursor integration
+- ✅ continue.dev
+- ✅ All spec-compliant MCP clients
+
+Tool definitions follow MCP specification with proper `inputSchema` field for parameter validation.
 
 ## License
 
